@@ -72,9 +72,6 @@ public class SpiderLeg {
             if(bodyText.toLowerCase().matches(".*\\b"+searchWord.toLowerCase()+"\\b.*")) {
                 wordsFound.add(searchWord);
             }
-            /*if (bodyText.toLowerCase().contains(searchWord.toLowerCase())) {
-                wordsFound.add(searchWord);
-            }*/
         }
         if(wordsFound.size()==0)
             return null;
@@ -85,7 +82,7 @@ public class SpiderLeg {
         List<String> wordsFound = new ArrayList<>();
         String bodyText = this.htmlDocument.body().text();
         for (String searchWord : wordsToSearch) {
-            if (bodyText.toLowerCase().contains(searchWord.toLowerCase())) {
+            if(bodyText.toLowerCase().matches(".*\\b"+searchWord.toLowerCase()+"\\b.*")) {
                 wordsFound.add(searchWord);
             } else {
                 return null;
